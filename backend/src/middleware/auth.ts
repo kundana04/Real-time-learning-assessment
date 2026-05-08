@@ -40,9 +40,7 @@ export const authenticate = async (
       const decoded = jwt.verify(token, secret) as JwtPayload;
 
       // Attach user ID to request
-      req.user = {
-        id: decoded.id,
-      };
+      req.user = { id: decoded.id } as any;
 
       next();
     } catch (error) {
