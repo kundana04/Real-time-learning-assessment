@@ -30,7 +30,7 @@ const MyProgressPage: React.FC = () => {
     if (selectedCourseId) {
       fetchCourseProgress(selectedCourseId);
     }
-  };
+  }, [selectedCourseId]);
 
  const fetchEnrolledCourses = async () => {
     try {
