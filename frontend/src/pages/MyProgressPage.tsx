@@ -24,7 +24,7 @@ const MyProgressPage: React.FC = () => {
 
   useEffect(() => {
   fetchEnrolledCourses();
-}, [fetchEnrolledCourses]);
+}, []);
 
   useEffect(() => {
     if (selectedCourseId) {
