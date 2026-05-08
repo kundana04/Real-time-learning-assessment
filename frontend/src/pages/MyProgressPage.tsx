@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import ProgressTracker from '../components/ProgressTracker';
@@ -30,9 +30,9 @@ const MyProgressPage: React.FC = () => {
     if (selectedCourseId) {
       fetchCourseProgress(selectedCourseId);
     }
-  }, [selectedCourseId]);
+  };
 
- const fetchEnrolledCourses = useCallback(async () => {
+ const fetchEnrolledCourses = async () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
