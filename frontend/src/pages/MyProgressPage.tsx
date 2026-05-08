@@ -91,7 +91,7 @@ const MyProgressPage: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+    }, [selectedCourseId]);
 
   const fetchCourseProgress = async (courseId: string) => {
     try {
