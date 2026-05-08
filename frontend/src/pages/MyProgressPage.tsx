@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import ProgressTracker from '../components/ProgressTracker';
@@ -32,7 +32,7 @@ const MyProgressPage: React.FC = () => {
     }
   }, [selectedCourseId]);
 
-  const fetchEnrolledCourses = async () => {
+ const fetchEnrolledCourses = useCallback(async () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
@@ -51,7 +51,7 @@ const MyProgressPage: React.FC = () => {
             {
               headers: { Authorization: `Bearer ${token}` },
             }
-          );
+          }, [selectedCourseId]);
 
           const progress = progressResponse.data;
           
