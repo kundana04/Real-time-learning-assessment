@@ -51,8 +51,8 @@ const MyProgressPage: React.FC = () => {
             {
               headers: { Authorization: `Bearer ${token}` },
             }
-          }, [selectedCourseId]);
-
+          );
+          
           const progress = progressResponse.data;
           
           // Only include courses where student has started watching
