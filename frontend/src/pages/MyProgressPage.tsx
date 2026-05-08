@@ -23,8 +23,8 @@ const MyProgressPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetchEnrolledCourses();
-  }, []);
+  fetchEnrolledCourses();
+}, [fetchEnrolledCourses]);
 
   useEffect(() => {
     if (selectedCourseId) {
